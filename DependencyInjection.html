@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MiPrimeraApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Dependency Injection</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="DependencyInjection.js"></script>
+</head>
+<body ng-controller="primerController">
+	<!--Para ingresar los datos de nuevos comentarios-->
+	<input type="text" ng-model="nuevoComentario.comentario"> <!--agrega a nuevoComentario, un nuevo valor comentario con los datos ingresados en el input-->
+	<input type="text" ng-model="nuevoComentario.username">
+	<button ng-click="agregarComentario()">Agregar comentario</button>
+	<!-- ng-click = al hacer click, llamar a la funcion-->
+
+	<h3>Comentarios</h3>
+	<ul>
+		<li ng-repeat="comentario in comentarios"> <!--ng repeat, itera el arreglo y lo repite segun la cantidad datos (en este caso objetos) tenga-->
+			{{comentario.comentario}} - <strong>
+				{{comentario.username}}
+			</strong>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miApp">
+<head>
+	<meta charset="UTF-8">
+	<title>rootScope</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="rootscope.js"></script>
+</head>
+<body>
+	<p>{{nombre}}</p>
+	<div ng-controller="miControl">
+		{{nombre}}
+		<p><strong>Valor del padre: </strong>{{$parent.nombre}}</p>
+
+		<div ng-controller="controladorHijo">
+			<p><strong>Valor del controlador hijo: </strong>{{nombre}}</p>
+		</div>
+	</div>
+</body>
+</html>

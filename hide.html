@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MiPrimeraApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Show & hide</title>
+	<link rel="stylesheet" type="text/css" href="hide.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="hide.js"></script>
+</head>
+<body ng-controller="primerController">
+	<!--Agregamos un loading-->
+	<div ng-show="loading">Cargando...</div>
+	<div ng-show="!loading && posts.length == 0">No se encontraron resultados</div>
+	<ul ng-show="posts.length > 0" class="animated">
+	<!--
+	<ul ng-hide="posts.length == 0" class="animated">
+	<ul ng-show="posts.length != 0" class="animated">
+	Tiene el mismo efecto
+	-->
+		<li ng-repeat="post in posts">
+			<h2>{{post.title}}</h2>
+			<p>
+				{{post.body}}
+			</p>
+		</li>
+	</ul>
+</body>
+</html>

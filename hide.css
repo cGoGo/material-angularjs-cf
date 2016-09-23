@@ -1,0 +1,13 @@
+/* le aplicamos nuestra propia animacion*/
+.animated {
+	opacity: 1;
+	max-height: auto;
+	overflow: hidden;
+	transition: all 2s;
+}
+/* sobreescribimos el css que aplica angular*/
+.animated.ng-hide {
+	opacity: 0;
+	max-height: 0px !important;
+	display: block !important;
+}
